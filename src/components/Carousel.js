@@ -16,27 +16,27 @@ class Carousel extends React.Component {
           id: 0,
           title: "Project 1",
           subTitle: "Project 1 subTitle",
-          imgSrc: "https://picsum.photos/1000/1600",
+          imgSrc: "https://picsum.photos/300/480",
           link: "",
-          selected: false
+          selected: false,
         },
         {
           id: 1,
           title: "Project 2",
           subTitle: "Project 2 subTitle",
-          imgSrc: "https://picsum.photos/1000/1600",
+          imgSrc: "https://picsum.photos/300/480",
           link: "",
-          selected: false
+          selected: false,
         },
         {
           id: 2,
           title: "Project 3",
           subTitle: "Project 3 subTitle",
-          imgSrc: "https://picsum.photos/1000/1600",
+          imgSrc: "https://picsum.photos/300/480",
           link: "",
-          selected: false
-        }
-      ]
+          selected: false,
+        },
+      ],
     };
   }
 

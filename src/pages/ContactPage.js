@@ -8,23 +8,32 @@ import Hero from "../components/Hero";
 class ContactPage extends React.Component {
   constructor(props) {
     super(props);
+    // this.handleChange = this.handleChange.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       name: "",
       email: "",
       message: "",
       disabled: false,
-      emailSent: null
+      emailSent: null,
     };
   }
 
   handleChange = (e) => {
-    console.log(e);
     const target = e.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
-      [name]: value
+      [name]: value,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.setState({
+      disabled: true,
+      emailSent: true,
     });
   };
 
@@ -77,10 +86,10 @@ class ContactPage extends React.Component {
               Send Message
             </Button>
 
-            {this.state.emailSent && (
+            {this.state.emailSent === true && (
               <p className="d-inline success-msg">Email Sent</p>
             )}
-            {!this.state.emailSent && (
+            {this.state.emailSent === false && (
               <p className="d-inline err-msg">Email Not Sent</p>
             )}
           </Form>
