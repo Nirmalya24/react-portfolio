@@ -1,7 +1,9 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import vmp from "../images/vmp.png";
+import covid from "../images/covid.png";
+import nodejs from "../images/nodejs.png";
 
 import Card from "./Card";
 
@@ -14,26 +16,29 @@ class Carousel extends React.Component {
       items: [
         {
           id: 0,
-          title: "Project 1",
-          subTitle: "Project 1 subTitle",
-          imgSrc: "https://picsum.photos/300/480",
-          link: "",
+          title: "Vegetation Management Application",
+          subTitle: "Made using Vue.js for Friends of Discovery Park",
+          imgSrc: vmp,
+          link: "https://vmpdash.herokuapp.com/",
+          github: "https://github.com/Nirmalya24/fodp_vmp",
           selected: false,
         },
         {
           id: 1,
-          title: "Project 2",
-          subTitle: "Project 2 subTitle",
-          imgSrc: "https://picsum.photos/300/480",
-          link: "",
+          title: "Nodejs Meetup",
+          subTitle: "Mock Node.js meetup website using EJS templates",
+          imgSrc: nodejs,
+          link: "http://nodejs-roux-meetup.herokuapp.com/",
+          github: "https://github.com/Nirmalya24/nodejs-meetup",
           selected: false,
         },
         {
           id: 2,
-          title: "Project 3",
-          subTitle: "Project 3 subTitle",
-          imgSrc: "https://picsum.photos/300/480",
-          link: "",
+          title: "COVID-Numbers",
+          subTitle: "COVID-19 Tracker in React.js",
+          imgSrc: covid,
+          link: "https://nirmalya24.github.io/covid-numbers/",
+          github: "https://github.com/Nirmalya24/covid-numbers",
           selected: false,
         },
       ],

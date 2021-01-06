@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import * as emailjs from "emailjs-com";
 
 import Content from "../components/Content";
 import Hero from "../components/Hero";
@@ -16,6 +17,7 @@ class ContactPage extends React.Component {
       message: "",
       disabled: false,
       emailSent: null,
+      buttonText: "Send Message",
     };
   }
 
@@ -31,6 +33,36 @@ class ContactPage extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+    this.setState({ disabled: true, buttonText: "Sending..." });
+    const { name, email, message } = this.state;
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      to_name: "contact@nirmalya.me",
+      message: message,
+    };
+
+    emailjs
+      .send(
+        "service_zumtbjw",
+        "template_8k0m4ei",
+        templateParams,
+        "user_7gRoPqiTX4LuCGHLMkh4o"
+      )
+      .then((res) => {
+        this.setState({
+          disabled: false,
+          emailSent: true,
+          buttonText: "Send another message",
+        });
+      })
+      .catch((err) => {
+        this.setState({
+          disabled: false,
+          emailSent: false,
+          buttonText: "Send Message",
+        });
+      });
     this.setState({
       disabled: true,
       emailSent: true,
@@ -83,7 +115,7 @@ class ContactPage extends React.Component {
               type="submit"
               disabled={this.state.disabled}
             >
-              Send Message
+              {this.state.buttonText}
             </Button>
 
             {this.state.emailSent === true && (
