@@ -9,6 +9,14 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 
+// Google Analytics
+import ReactGA from "react-ga";
+
+function initializeReactGA() {
+  ReactGA.initialize("G-S61M09D7F9");
+  ReactGA.pageview("/");
+}
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -17,19 +25,19 @@ class App extends React.Component {
       headerLinks: [
         { title: "Home", path: "/" },
         { title: "About", path: "/about" },
-        { title: "Contact", path: "/contact" }
+        { title: "Contact", path: "/contact" },
       ],
       home: {
         title: "Be Relentless",
         subTitle: "Projects that make a difference",
-        text: "Checkout my project below"
+        text: "Checkout my project below",
       },
       about: {
-        title: "About Me"
+        title: "About Me",
       },
       contact: {
-        title: "Let's Talk"
-      }
+        title: "Let's Talk",
+      },
     };
   }
 

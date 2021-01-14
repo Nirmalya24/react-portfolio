@@ -37,8 +37,8 @@ function AboutPage(props) {
         </p>
         <p>
           If you come across my portfolio and would like to hire me, please send
-          me an email using my <a href="/contact">contact page</a>, I would love
-          to talk about new opportunities!
+          me an email using my contact page, I would love to talk about new
+          opportunities!
         </p>
       </Content>
     </div>
